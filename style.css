@@ -10,11 +10,15 @@ body {
   font-family: 'Roboto';
 }
 
-/* Ur Life */
-
-.container {
-  max-width: 1600px;
+a {
+  text-decoration: none;
 }
+
+ul li {
+  list-style: none;
+}
+
+/* Ur Life */
 
 .ur_life {
   background: url('./assets/img/bg-image.jpg') no-repeat center center / cover;
@@ -56,6 +60,20 @@ body {
   color: #ffffff;
 }
 
+.container ul {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: #ffffff;
+}
+
+#menu {
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
 .container p {
   display: flex;
   justify-content: center;
@@ -83,8 +101,8 @@ body {
 }
 
 .container .life_navbar_text {
-  padding: 0 85px 0;
   margin-top: 60px;
+  padding: 0 85px 0;
   font-size: 14px;
   opacity: 0.8;
   color: #ffffff;
@@ -93,8 +111,7 @@ body {
   justify-content: space-around;
 }
 
-.life_navbar_text:hover {
-  display: inline;
+.container .life_navbar_text:hover {
   text-decoration: underline;
   cursor: pointer;
   opacity: 1;
@@ -117,7 +134,11 @@ body {
 /* Idea */
 
 .idea .container {
+  margin-top: 120px;
   display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 
 .idea_content h3 {
@@ -130,7 +151,6 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #373737;
-  margin: 295px 268px 0;
 }
 
 .idea_content p {
@@ -138,21 +158,14 @@ body {
   color: #4e4e4e;
   width: 407px;
   height: 80px;
-  margin: 20px 268px 30px;
+  margin-top: 20px;
+  margin-right: 248px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
-.idea_content p span {
-  font-weight: bold;
-}
-
-.idea_button {
-  margin-left: 268px;
-}
-
-.idea_img {
-  margin-top: 120px;
-  margin-bottom: 120px;
+.container .idea_img {
+  margin-bottom: 140px;
 }
 
 /* Community */
@@ -439,12 +452,132 @@ footer .container .author {
 
 /* Responsive */
 
-@media(max-width:1400px){
-  .ur_life_navbar img {
-    margin-top: 47px;
+@media (max-width: 1080px) {
+  .idea .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .idea_content p {
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .idea_content .idea_button {
+    margin-bottom: 20px;
+  }
+
+  .idea .container .idea_img {
     margin-left: 0;
+    padding: 0;
+  }
 }
-.container .life_navbar_text{
-  display: none;
-}
+
+@media (max-width: 836px) {
+  .container .life_navbar_text {
+    display: block;
+  }
+  .ur_life_navbar .menu_box img {
+    padding-left: 10px;
+    margin-top: 47px;
+    cursor: pointer;
+  }
+
+  #menu__toggle {
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center; /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  /* контейнер меню */
+  .menu__box {
+    display: block;
+    flex-direction: column;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: rgba(56, 55, 55, 0.802);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu__box img {
+    display: none;
+  }
+  /* элементы меню */
+  .life_navbar_text {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .life_navbar_text:hover {
+    background-color: #454647;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    transition-duration: 0.25s;
+  }
+  .menu__box {
+    transition-duration: 0.25s;
+  }
+  .life_navbar_text {
+    transition-duration: 0.25s;
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
 }

@@ -12,12 +12,20 @@
 
     <div class="ur_life">
       <div class="container">
-        <div class="ur_life_navbar">
-          <p class="life_navbar_text">About</p>
-          <p class="life_navbar_text">Syllabus</p>
-          <img src="./assets/img/logo.svg" alt="logo" />
-          <p class="life_navbar_text">Projects</p>
-          <p class="life_navbar_text">FAQ</p>
+        <div class="ur_life_navbar">  
+        <div class="hamburger-menu">
+          <input id="menu__toggle" type="checkbox" hidden/>
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <ul class="menu__box">
+            <li><a href="#" class="life_navbar_text">About</a></li>
+            <li><a href="#" class="life_navbar_text">Syllabus</a></li>
+            <img src="./assets/img/logo.svg" alt="logo" />
+            <li><a href="#" class="life_navbar_text">Projects</a></li>
+            <li><a href="#" class="life_navbar_text">FAQ</a></li>
+          </ul>
+        </div>
         </div>
         <h1>your life is WebDev</h1>
         <p>
@@ -40,8 +48,9 @@
         </div>
       </div>
     </div>
-
-    <!-- Idea -->
+</nav>
+    
+<!-- Idea -->
 
     <div class="idea">
       <div class="container">
@@ -68,32 +77,31 @@
     </div>
 
     <!-- Community -->
-<section class="community">
-    <div class="community_content">
-      <div class="community_part">
-        <img src="./assets/img/icon.svg" alt="icon" />
-        <h4>our community</h4>
-        <p>
-          A hacker is any skilled computer expert that uses their technical
-          knowledge to overcome a problem, but it can also mean a security
-          hacker in common language
-        </p>
-      </div>
-      <div class="community_pagination">
-        <div class="community_navbar">
-          <a href="#">❮</a>
-          <p>1 / 5</p>
-          <a href="#">❯</a>
+    <section class="community">
+      <div class="community_content">
+        <div class="community_part">
+          <img src="./assets/img/icon.svg" alt="icon" />
+          <h4>our community</h4>
+          <p>
+            A hacker is any skilled computer expert that uses their technical
+            knowledge to overcome a problem, but it can also mean a security
+            hacker in common language
+          </p>
         </div>
-        <div class="community_images">
-          <img src="./assets/img/Rectangle 2.jpg" alt="1" />
-          <img src="./assets/img/Rectangle 21.jpg" alt="2" />
-          <img src="./assets/img/Rectangle 22.jpg" alt="3" />
+        <div class="community_pagination">
+          <div class="community_navbar">
+            <a href="#">❮</a>
+            <p>1 / 5</p>
+            <a href="#">❯</a>
+          </div>
+          <div class="community_images">
+            <img src="./assets/img/Rectangle 2.jpg" alt="1" />
+            <img src="./assets/img/Rectangle 21.jpg" alt="2" />
+            <img src="./assets/img/Rectangle 22.jpg" alt="3" />
+          </div>
         </div>
       </div>
-    </div>
-</section>
-    
+    </section>
 
     <!-- Code -->
 
@@ -152,20 +160,18 @@
 
     <!-- Footer -->
 
-   <footer>
-    <div class="container">
-      <div class="footer_text">
-        <p class="text">Credits</p>
-        <p class="dash">|</p>          
-        <p class="text">Privacy</p>
-        <p class="dash">|</p> 
-        <p class="text">Our teams</p>
+    <footer>
+      <div class="container">
+        <div class="footer_text">
+          <a href="#" class="text">Credits</a>
+          <p class="dash">|</p>
+          <a href="#" class="text">Privacy</a>
+          <p class="dash">|</p>
+          <a href="#" class="text">Our teams</a>
+        </div>
+        <img src="./assets/img/logo.svg" alt="logo" />
+        <p class="author">by Nodir Khajiev | 2021</p>
       </div>
-      <img src="./assets/img/logo.svg" alt="logo">
-      <p class="author">by Nodir Khajiev | 2021</p>
-    </div>
-   </footer>
-
-
+    </footer>
   </body>
 </html>
